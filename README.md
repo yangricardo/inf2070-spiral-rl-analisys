@@ -100,8 +100,8 @@ If you find our work useful for your research, please consider citing:
 @article{liu2025spiral,
   title={SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning via Multi-Agent Multi-Turn Reinforcement Learning},
   author={Liu, Bo and Guertler, Leon and Yu, Simon and Liu, Zichen and Qi, Penghui and Balcells, Daniel and Liu, Mickel and Tan, Cheston and Shi, Weiyan and Lin, Min and Lee, Wee Sun and Jaques, Natasha},
-  year={2025},
   journal={arXiv preprint arXiv:2506.24119},
+  year={2025},
   url={https://arxiv.org/abs/2506.24119}
 }
 ```
