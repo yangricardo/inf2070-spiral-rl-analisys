@@ -35,7 +35,36 @@ def apply_qwen3_general_template(
     )
 
 
+def apply_r1_template(observation: str, system_prompt: Optional[str] = None) -> str:
+    """OctoThinker template for game-based tasks."""
+    del system_prompt
+    return (
+        f"A conversation between User and Assistant. The User presents the observation of a zero-sum game, and the Assistant makes a valid action in order to win. "
+        f"The Assistant first thinks about the reasoning process in the mind and then provides the action. "
+        f"User: You must put your answer inside \\boxed{{}} "
+        f"and your final answer will be extracted automatically by the \\boxed{{}} tag.\n"
+        f"Observation: {observation}\n"
+        f"Assistant:"
+    )
+
+
+def apply_r1_general_template(observation: str, system_prompt: Optional[str] = None) -> str:
+    """OctoThinker template for general reasoning tasks."""
+    del system_prompt
+    return (
+        f"A conversation between User and Assistant. The user asks a question, and "
+        f"the Assistant solves it. The assistant first thinks about the reasoning process in the mind and "
+        f"then provides the user with the answer. User: You must put your answer inside \\boxed{{}} "
+        f"and your final answer will be extracted automatically by the \\boxed{{}} tag.\n"
+        f"Question: {observation}\n"
+        f"Assistant:"
+    )
+
+
+
 TEMPLATE_FACTORY = {
     "qwen3": apply_qwen3_template,
     "qwen3_general": apply_qwen3_general_template,
+    "r1": apply_r1_template,
+    "r1_general": apply_r1_general_template,
 }
