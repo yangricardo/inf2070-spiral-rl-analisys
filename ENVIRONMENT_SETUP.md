@@ -1,7 +1,7 @@
 # INF2070 - Reinforcement Learning - Spiral Analisys
 
 > Artigo [SPIRAL: Self-Play on Zero-Sum Games Incentivizes Reasoning
-via Multi-Agent Multi-Turn Reinforcement Learning](https://arxiv.org/pdf/2506.24119)
+via Multi-Agent Multi-Turn Reinforcement Learning](./2506.24119v2.pdf)
 
 # Configuração do Ambiente
 
