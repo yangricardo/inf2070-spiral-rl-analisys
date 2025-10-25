@@ -72,7 +72,73 @@ hash -r   # limpa cache de comandos do shell zsh
 ```
 
 
-## Sistema Linux com placa NVDIA
+## Configuração do NVDIA CUDA
+
+### Preparação do sistema
+
+```bash
+sudo dnf update -y
+sudo dnf install kernel-devel kernel-headers gcc-c++
+```
+
+### Adicionar Repositório CUDA
+```bash
+# Desative o repositório "cuda-fedora39" se estiver migrando
+# sudo dnf config-manager --disable cuda-fedora39-x86_64
+
+# Adicione o novo repositório (copie o comando exato do site)
+sudo dnf config-manager addrepo --from-repofile=https://developer.download.nvidia.com/compute/cuda/repos/fedora42/x86_64/cuda-fedora42.repo 
+
+# Limpe o cache para reconhecer o novo repositório
+sudo dnf clean expire-cache
+```
+
+> Atualize a url com base na sua versão do fedora ou sistema operacional
+> [CUDA Installation for Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#fedora)
+
+### Instale o Driver e CUDA Toolkit
+
+```bash
+# Instala o driver mais recente via DKMS
+sudo dnf module install nvidia-driver:latest-dkms
+
+# Instala o CUDA Toolkit completo
+sudo dnf install cuda
+```
+
+### Habilitar RPM Fusion
+
+```bash
+sudo dnf install \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  
+```
+
+### Instalar driver e o CUDA
+
+
+```bash
+sudo dnf update -y # Garante que está tudo atualizado
+sudo dnf install akmod-nvidia # Instala o driver (versão "akmod" que se reconstrói)
+sudo dnf install xorg-x11-drv-nvidia-cuda # Módulos CUDA para o driver
+sudo dnf install cuda # Instala o CUDA Toolkit
+``` 
+
+### Reiniciar o computador
+
+```bash
+sudo reboot
+``` 
+
+### Configurar variaveis de ambiente
+
+
+```bash
+echo 'export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+``` 
+
+> pode ser habilitado no $HOME/.zshrc
 
 #### Instalação do CUDA
 
