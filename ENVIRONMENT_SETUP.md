@@ -134,11 +134,12 @@ sudo reboot
 
 
 ```bash
-echo 'export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}' >> ~/.bashrc
-echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}' >> ~/.bashrc
+export CUDA_HOME=/usr/local/cuda-13
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 ``` 
 
-> pode ser habilitado no $HOME/.zshrc
+> Adicione ao arquivo `$HOME/.bashrc` ou `$HOME/.zshrc` conforme shell adotado no seu ambiente
 
 #### Instalação do CUDA
 
