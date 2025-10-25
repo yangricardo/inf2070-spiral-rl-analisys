@@ -3,12 +3,19 @@
     "%load_ext autoreload",
     "%autoreload 2"
   ],
-  "python.analysis.typeCheckingMode": "basic",  
+  "python.analysis.typeCheckingMode": "basic",
+  "python.condaPath": "${env:HOME}/.asdf/installs/python/miniforge3-25.3.1-0/condabin/conda",
+  "python.defaultInterpreterPath": "${env:HOME}/.asdf/installs/python/miniforge3-25.3.1-0/envs/spiral/bin/python",
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.shellIntegration.enabled": true,
   "python-envs.pythonProjects": [
     {
-      "path": "${workspaceFolder}/.venv/bin/python",
+      "path": "${env:HOME}/.asdf/installs/python/miniforge3-25.3.1-0/envs/spiral/bin/python",
       "envManager": "ms-python.python:venv",
       "packageManager": "ms-python.python:pip"
     }
-  ]
+  ],
+  "python-envs.defaultEnvManager": "ms-python.python:conda",
+  "python-envs.defaultPackageManager": "ms-python.python:conda"
 }
