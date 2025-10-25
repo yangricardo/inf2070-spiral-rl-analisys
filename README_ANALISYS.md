@@ -46,3 +46,48 @@ source venv/bin/activate
 ```
 pip install vllm==0.8.4 && pip install oat-llm==0.2.1
 ``` 
+
+### Fedora OS
+
+#### Instalação do CUDA
+
+1. Checar ambiente de hardware e kernel
+
+```bash
+> lspci | grep -i nvidia
+uname -r 
+01:00.0 VGA compatible controller: NVIDIA Corporation TU117M [GeForce GTX 1650 Mobile / Max-Q] (rev a1)
+01:00.1 Audio device: NVIDIA Corporation Device 10fa (rev a1)
+6.17.4-200.fc42.x86_64
+```
+
+2. Atualizar sistema e kernel
+
+```bash
+> sudo dnf update -y
+> sudo dnf install -y gcc make kernel-headers kernel-devel dkms
+``` 
+
+3. Habilitar RPM Fusion para drivers NVDIA
+
+
+```bash
+> sudo dnf install -y \
+  https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm \ 
+  https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm  
+```
+
+4. Instalar Driver NVIDIA
+
+> <https://fedoraproject.org/wiki/Cuda>
+
+```bash
+> # after reboot:
+nvidia-smi
+```
+
+5. Instala NVDIA CUDA Toolkit
+
+>[Cuda Downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Fedora&target_version=42&target_type=rpm_network)
+
+6. Configura 
