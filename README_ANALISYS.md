@@ -28,3 +28,9 @@ Após a instalação do ASDF, execute os comandos
 > python -V
 Python 3.10.19
 ```
+
+## Configuração do virtual env
+
+```bash
+python -m venv venv
+```
