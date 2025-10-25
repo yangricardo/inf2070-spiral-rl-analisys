@@ -34,3 +34,9 @@ Python 3.10.19
 ```bash
 python -m venv venv
 ```
+
+## Ativar ambiente virtual
+
+```bash
+source venv/bin/activate
+``` 
