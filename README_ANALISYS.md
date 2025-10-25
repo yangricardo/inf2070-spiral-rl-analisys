@@ -40,3 +40,9 @@ python -m venv venv
 ```bash
 source venv/bin/activate
 ``` 
+
+## Instalação de dependências
+
+```
+pip install vllm==0.8.4 && pip install oat-llm==0.2.1
+``` 
