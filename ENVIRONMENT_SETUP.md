@@ -141,6 +141,13 @@ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 > Adicione ao arquivo `$HOME/.bashrc` ou `$HOME/.zshrc` conforme shell adotado no seu ambiente
 
+### Teste se está ok
+
+```bash
+> nvidia-smi
+> nvcc --version
+```
+
 #### Instalação do CUDA
 
 1. Checar ambiente de hardware e kernel
