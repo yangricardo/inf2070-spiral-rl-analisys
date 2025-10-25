@@ -87,7 +87,7 @@ nvidia-smi
 ```
 
 5. Instala NVDIA CUDA Toolkit
-
+> [Instruções de instalação do CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#fedora)
 >[Cuda Downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Fedora&target_version=42&target_type=rpm_network)
 
 6. Configura 
