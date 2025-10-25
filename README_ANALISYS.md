@@ -29,25 +29,7 @@ Após a instalação do ASDF, execute os comandos
 Python 3.10.19
 ```
 
-## Configuração do virtual env
-
-```bash
-python -m venv venv
-```
-
-## Ativar ambiente virtual
-
-```bash
-source venv/bin/activate
-``` 
-
-## Instalação de dependências
-
-```
-pip install vllm==0.8.4 && pip install oat-llm==0.2.1
-``` 
-
-### Fedora OS
+## Sistema Linux com placa NVDIA
 
 #### Instalação do CUDA
 
@@ -90,4 +72,21 @@ nvidia-smi
 > [Instruções de instalação do CUDA](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#fedora)
 >[Cuda Downloads](https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Fedora&target_version=42&target_type=rpm_network)
 
-6. Configura 
+
+## Configuração do virtual env
+
+```bash
+python -m venv venv
+```
+
+## Ativar ambiente virtual
+
+```bash
+source venv/bin/activate
+``` 
+
+## Instalação de dependências
+
+```
+> pip install vllm==0.8.4 && pip install oat-llm==0.2.1
+``` 
