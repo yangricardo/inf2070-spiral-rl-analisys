@@ -22,12 +22,55 @@ Após a instalação do ASDF, execute os comandos
 > asdf set python miniforge3-25.3.1-0
 ```
 
-> Verifique se a versão do Python é a esperada
+## Inicializa ambiente conda
 
 ```bash
-> python -V
-Python 3.10.19
+conda create -y -n spiral python=3.10
+conda init spiral
+conda activate spiral
+``` 
+
+### Troubleshoot
+
+GitHub Copilot
+
+Conda não foi inicializado para zsh — o output mostrou que só foi alterado .bashrc. Execute um dos blocos abaixo no zsh.
+
+1) Inicializar corretamente para zsh (recomendado)
+```bash
+# saia do venv se ativo
+deactivate 2>/dev/null || true
+
+# use o binário do conda instalado pelo asdf (ajuste se caminho diferente)
+~/.asdf/installs/python/miniforge3-25.3.1-0/bin/conda init zsh
+
+# reinicie o shell zsh ou re-sourcie o rc
+exec zsh
+# ou
+source ~/.zshrc
+
+# verificar
+conda --version
+conda activate spiral
 ```
+
+2) Atalho imediato (não persiste entre shells)
+```bash
+# sair do venv
+deactivate 2>/dev/null || true
+
+# carregar condash diretamente e ativar o env
+source ~/.asdf/installs/python/miniforge3-25.3.1-0/etc/profile.d/conda.sh
+conda activate spiral
+```
+
+Se ainda der erro, rode:
+```bash
+which conda
+echo $SHELL
+hash -r   # limpa cache de comandos do shell zsh
+```
+
 
 ## Sistema Linux com placa NVDIA
 
