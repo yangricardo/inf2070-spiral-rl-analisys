@@ -22,6 +22,8 @@ Após a instalação do ASDF, execute os comandos
 > asdf set python miniforge3-25.3.1-0
 ```
 
+> Se já tiver o conda instalado no seu ambiente, pode pular esta etapa
+
 ## Inicializa ambiente conda
 
 ```bash
